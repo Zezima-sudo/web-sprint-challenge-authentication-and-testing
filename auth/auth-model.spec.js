@@ -6,13 +6,13 @@ beforeEach(async () => {
 });
 
 describe("models", () => {
-  it("should insert correctly", async () => {
-    await Users.insert({ username: "CodyHayes", password: "password1" });
+  it("insert data", async () => {
+    await Users.insert({ username: "eric", password: "password" });
     const users = await db("users");
     expect(users).toHaveLength(1);
   });
-  it("should return data with findBy", async () => {
-    await Users.findBy({ username: "cody" });
+  it("should return data", async () => {
+    await Users.findBy({ username: "eric" });
     const users = await db("users");
     expect(Array.isArray([users])).toBe(true);
   });

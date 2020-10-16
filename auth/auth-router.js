@@ -14,7 +14,7 @@ router.post("/register", (req, res) => {
     .then(user => {
       const token = genToken(user);
       res.status(200).json({
-        message: `Thanks for registering, ${userData.username}!`,
+        message: `ty for registering, ${userData.username}!`,
         user,
         token: token
       });

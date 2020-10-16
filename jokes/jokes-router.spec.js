@@ -1,7 +1,7 @@
 const request = require("supertest");
 const server = require("../api/server.js");
 const jwt = require("jsonwebtoken");
-const secret = require("../config/secrets.js");
+const secret = require("../api/config");
 
 let token;
 
@@ -9,7 +9,7 @@ beforeAll(done => {
   request(server)
     .post("api/auth/login")
     .send({
-      username: "cody",
+      username: "eric",
       password: "pass"
     })
     .end((err, response) => {
